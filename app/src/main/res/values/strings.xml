@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Jogo da velha</string>
+    <string name="up_left_tic_tac_toe_position">Up left tic-tac-toe position</string>
+    <string name="up_center_tic_tac_toe_position">Up center tic-tac-toe position</string>
+    <string name="up_right_tic_tac_toe_position">Up right tic-tac-toe position</string>
+    <string name="center_left_tic_tac_toe_position">Center left tic-tac-toe position</string>
+    <string name="center_center_tic_tac_toe_position">Center center tic-tac-toe position</string>
+    <string name="center_right_tic_tac_toe_position">Center right tic-tac-toe position</string>
+    <string name="bottom_left_tic_tac_toe_position">Bottom left tic-tac-toe position</string>
+    <string name="bottom_center_tic_tac_toe_position">Bottom center tic-tac-toe position</string>
+    <string name="bottom_right_tic_tac_toe_position">Bottom right tic-tac-toe position</string>
+    <string name="play_again">Play Again</string>
 </resources>
