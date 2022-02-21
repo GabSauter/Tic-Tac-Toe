@@ -8,14 +8,15 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="360dp"
-        android:layout_height="360dp"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
         android:background="@drawable/tictactoe_background"
-        android:paddingStart="10dp"
-        android:paddingLeft="6dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="3dp"
         app:columnCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtViewWinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlayAgain"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,35 +25,43 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
             android:contentDescription="@string/up_left_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="0" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
             android:contentDescription="@string/up_center_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="1" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
             android:contentDescription="@string/up_right_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="2" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_left_tic_tac_toe_position"
             android:onClick="choice"
@@ -60,8 +69,10 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_center_tic_tac_toe_position"
             android:onClick="choice"
@@ -69,8 +80,10 @@
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_right_tic_tac_toe_position"
             android:onClick="choice"
@@ -78,24 +91,33 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/bottom_left_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="6" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:contentDescription="@string/bottom_center_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="7" />
 
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:contentDescription="@string/bottom_right_tic_tac_toe_position"
             android:onClick="choice"
             android:tag="8" />
@@ -111,10 +133,9 @@
         android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/gridLayout"
-        tools:text="Test Text" />
+        app:layout_constraintEnd_toEndOf="@+id/btnPlayAgain"
+        app:layout_constraintStart_toStartOf="@+id/btnPlayAgain"
+        tools:text="O Wins" />
 
     <Button
         android:id="@+id/btnPlayAgain"
@@ -126,6 +147,7 @@
         app:backgroundTint="#1B1B1B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/gridLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
