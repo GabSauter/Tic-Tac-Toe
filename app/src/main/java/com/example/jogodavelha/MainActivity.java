@@ -1,13 +1,12 @@
 package com.example.jogodavelha;
 
 import android.annotation.SuppressLint;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.gridlayout.widget.GridLayout;
 
@@ -93,6 +92,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putIntArray("gameState", gameState);
+        outState.putInt("actualPlayer", actualPlayer);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        gameState = savedInstanceState.getIntArray("gameState");
+        actualPlayer = savedInstanceState.getInt("actualPlayer");
+
+        GridLayout gridLayout = findViewById(R.id.gridLayout);
+        for(int i = 0 ; i <gridLayout.getChildCount() ; i++){
+            ImageView child = (ImageView) gridLayout.getChildAt(i);
+            if(gameState[i] != 2){
+                if(gameState[i] == 0)
+                    child.setImageResource(R.drawable.tictactoe_o);
+                else if(gameState[i] == 1)
+                    child.setImageResource(R.drawable.tictactoe_x);
+            }
+        }
     }
 }
