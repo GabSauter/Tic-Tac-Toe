@@ -27,7 +27,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/up_left_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="0" />
 
         <ImageView
@@ -36,7 +36,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/up_center_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="1" />
 
         <ImageView
@@ -45,7 +45,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/up_right_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="2" />
 
         <ImageView
@@ -54,7 +54,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_left_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="3" />
 
         <ImageView
@@ -63,7 +63,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_center_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="4" />
 
         <ImageView
@@ -72,7 +72,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/center_right_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="5" />
 
         <ImageView
@@ -80,7 +80,7 @@
             android:layout_width="115dp"
             android:layout_height="115dp"
             android:contentDescription="@string/bottom_left_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="6" />
 
         <ImageView
@@ -88,7 +88,7 @@
             android:layout_width="115dp"
             android:layout_height="115dp"
             android:contentDescription="@string/bottom_center_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="7" />
 
         <ImageView
@@ -96,7 +96,7 @@
             android:layout_width="115dp"
             android:layout_height="115dp"
             android:contentDescription="@string/bottom_right_tic_tac_toe_position"
-            android:onClick="choice"
+
             android:tag="8" />
 
     </androidx.gridlayout.widget.GridLayout>
@@ -117,7 +117,6 @@
         android:id="@+id/btnPlayAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="playAgain"
         android:text="@string/play_again"
         android:visibility="invisible"
         app:backgroundTint="#1B1B1B"

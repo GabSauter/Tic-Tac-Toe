@@ -10,4 +10,5 @@
     <string name="bottom_center_tic_tac_toe_position">Bottom center tic-tac-toe position</string>
     <string name="bottom_right_tic_tac_toe_position">Bottom right tic-tac-toe position</string>
     <string name="play_again">Play Again</string>
+    <string name="wins">%1$s wins</string>
 </resources>
