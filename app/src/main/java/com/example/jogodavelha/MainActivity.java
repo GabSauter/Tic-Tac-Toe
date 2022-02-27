@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int[] gameState = {2,2,2,2,2,2,2,2,2}; //2: empty, 0: o, 1: x
     int[][] winningCombinations = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
     boolean gameIsRunning = true;
+    String message;
+
+    TextView txtViewWinner;
+    Button btnPlayAgain;
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnPlayAgain) {
-            TextView txtViewWinner = findViewById(R.id.txtViewWinner);
-            Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
             GridLayout gridLayout = findViewById(R.id.gridLayout);
             txtViewWinner.setVisibility(View.INVISIBLE);
             btnPlayAgain.setVisibility(View.INVISIBLE);
@@ -55,18 +57,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     gameState[actualState] = 1;
                     actualPlayer=1;
                 }
-                String message;
-                TextView txtViewWinner = findViewById(R.id.txtViewWinner);
-                Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
+                txtViewWinner = findViewById(R.id.txtViewWinner);
+                btnPlayAgain = findViewById(R.id.btnPlayAgain);
                 for(int[] winningCombination:winningCombinations){
                     if(gameState[winningCombination[0]]==gameState[winningCombination[1]]&&gameState[winningCombination[1]]==gameState[winningCombination[2]]&&gameState[winningCombination[0]]!=2&&gameIsRunning){
                         gameIsRunning = false;
                         if(gameState[winningCombination[0]]==0){
-                            message = "O ";
+                            message = "O won!";
                         }else{
-                            message = "X ";
+                            message = "X won!";
                         }
-                        txtViewWinner.setText(getString(R.string.wins, message));
+                        txtViewWinner.setText(message);
                         txtViewWinner.setVisibility(View.VISIBLE);
                         btnPlayAgain.setVisibility(View.VISIBLE);
                         txtViewWinner.setAlpha(0f);
@@ -113,8 +114,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView nine = findViewById(R.id.imageView9);
         nine.setOnClickListener(this);
 
-        Button playAgainButton = findViewById(R.id.btnPlayAgain);
-        playAgainButton.setOnClickListener(this);
+        txtViewWinner = findViewById(R.id.txtViewWinner);
+        btnPlayAgain = findViewById(R.id.btnPlayAgain);
+        btnPlayAgain.setOnClickListener(this);
     }
 
     @Override
@@ -122,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onSaveInstanceState(outState);
         outState.putIntArray("gameState", gameState);
         outState.putInt("actualPlayer", actualPlayer);
+        outState.putBoolean("gameIsRunning", gameIsRunning);
+        outState.putString("message", message);
     }
 
     @Override
@@ -129,6 +133,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestoreInstanceState(savedInstanceState);
         gameState = savedInstanceState.getIntArray("gameState");
         actualPlayer = savedInstanceState.getInt("actualPlayer");
+        gameIsRunning = savedInstanceState.getBoolean("gameIsRunning");
+        message = savedInstanceState.getString("message");
 
         GridLayout gridLayout = findViewById(R.id.gridLayout);
         for(int i = 0 ; i <gridLayout.getChildCount() ; i++){
@@ -140,5 +146,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     child.setImageResource(R.drawable.tictactoe_x);
             }
         }
+
+        txtViewWinner = findViewById(R.id.txtViewWinner);
+        btnPlayAgain = findViewById(R.id.btnPlayAgain);
+        if(!gameIsRunning){
+            txtViewWinner.setText(message);
+            txtViewWinner.setVisibility(View.VISIBLE);
+            btnPlayAgain.setVisibility(View.VISIBLE);
+        }
+
     }
 }
